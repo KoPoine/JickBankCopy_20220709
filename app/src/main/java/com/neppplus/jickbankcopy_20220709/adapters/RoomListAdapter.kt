@@ -27,7 +27,9 @@ class RoomListAdapter(
         val levelTxt = row.findViewById<TextView>(R.id.levelTxt)
         val descriptionTxt = row.findViewById<TextView>(R.id.descriptionTxt)
 
-        priceTxt.text = mList[position].price.toString()
+//        priceTxt.text = mList[position].price.toString()
+//        RoomData의 getFormattedPrice 함수를 활용해서 가격을 표시
+        priceTxt.text = mList[position].getFormattedPrice()
         addressTxt.text = mList[position].address
         levelTxt.text = mList[position].level.toString()
         descriptionTxt.text = mList[position].description
