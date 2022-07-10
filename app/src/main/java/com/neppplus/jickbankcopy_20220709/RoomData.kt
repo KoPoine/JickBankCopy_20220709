@@ -17,8 +17,9 @@ class RoomData (
         if (price < 10000) {
             resultPrice = formatter.format(price)
         } else {
-            val over = price / 10000
-            val remain = price % 10000
+//            price가 12000일 경우
+            val over = price / 10000 // over = 1
+            val remain = price % 10000  // remain = 2000
             resultPrice = "${over}억 ${formatter.format(remain)}"
         }
         return resultPrice
