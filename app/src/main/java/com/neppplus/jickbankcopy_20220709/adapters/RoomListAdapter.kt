@@ -31,7 +31,7 @@ class RoomListAdapter(
 //        RoomData의 getFormattedPrice 함수를 활용해서 가격을 표시
         priceTxt.text = mList[position].getFormattedPrice()
         addressTxt.text = mList[position].address
-        levelTxt.text = mList[position].level.toString()
+        levelTxt.text = mList[position].getFormattedLevel()
         descriptionTxt.text = mList[position].description
 
         return row

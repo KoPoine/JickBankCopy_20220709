@@ -24,4 +24,36 @@ class RoomData (
         }
         return resultPrice
     }
+
+    fun getFormattedLevel() : String {
+        var resultLevel = ""
+
+        if (level > 0) {
+            resultLevel = ", ${level}층"
+        } else if (level == 0) {
+            resultLevel = ", 반지하"
+        } else {
+            resultLevel = ", 지하 ${level * -1}층"
+        }
+
+        return resultLevel
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
