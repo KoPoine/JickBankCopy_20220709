@@ -2,7 +2,8 @@ package com.neppplus.jickbankcopy_20220709
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.neppplus.jickbankcopy_20220709.adapters.RoomListAdapter
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.neppplus.jickbankcopy_20220709.adapters.RoomRecyclerViewAdapter
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -10,7 +11,7 @@ class MainActivity : AppCompatActivity() {
     val mRoomList = ArrayList<RoomData>()
 
 //    어댑터를 담고 있을 멤버변수 생성
-    lateinit var mRoomAdapter : RoomListAdapter
+    lateinit var mRoomAdapter : RoomRecyclerViewAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,8 +28,8 @@ class MainActivity : AppCompatActivity() {
         mRoomList.add( RoomData(26000, "마포구 연남동", 3, "강추!! 홍대역 테라스 넓은 원룸") )
         mRoomList.add( RoomData(5500, "마포구 연남동", 0, "홍대역 풀옵션 원룸") )
 
-        mRoomAdapter = RoomListAdapter(this, R.layout.room_list_item, mRoomList)
+        mRoomAdapter = RoomRecyclerViewAdapter(this, mRoomList)
         mainListView.adapter = mRoomAdapter
-
+        mainListView.layoutManager = LinearLayoutManager(this)
     }
 }
