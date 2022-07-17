@@ -2,6 +2,7 @@ package com.neppplus.jickbankcopy_20220709
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.LinearLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.neppplus.jickbankcopy_20220709.adapters.RoomRecyclerViewAdapter
 import kotlinx.android.synthetic.main.activity_main.*
@@ -31,5 +32,8 @@ class MainActivity : AppCompatActivity() {
         mRoomAdapter = RoomRecyclerViewAdapter(this, mRoomList)
         mainListView.adapter = mRoomAdapter
         mainListView.layoutManager = LinearLayoutManager(this)
+
+//        가로형 RecyclerView의 layoutManager 코드
+//        mainListView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
     }
 }
